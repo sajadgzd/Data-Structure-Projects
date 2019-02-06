@@ -95,7 +95,7 @@ namespace main_savitch_2C
         {
           statistician multipliedS;
           multipliedS.total = scale * s.total;
-          multipliedS.count = scale * s.total;
+          multipliedS.count = scale * s.count;
           multipliedS.tinyest = scale * s.tinyest;
           multipliedS.largest = scale * s.largest;
           return multipliedS;
@@ -111,8 +111,18 @@ namespace main_savitch_2C
     if(s1.length()==0 && s2.length()==0){
       return s1==s2;
     }
-
-
+    else if(s1.length()>0 && s2.length()>0){
+      return
+        (s1.length()==s2.length())
+        &&
+        (s1.mean()==s2.mean())
+        &&
+        (s1.minimum()==s2.minimum())
+        &&
+        (s1.maximum()==s2.maximum())
+        &&
+        (s1.sum()==s2.sum());
+      }
 
   }
 
