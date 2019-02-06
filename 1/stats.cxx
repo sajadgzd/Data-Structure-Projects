@@ -24,12 +24,46 @@ namespace main_savitch_2C
 
   }
 
-  
+  int statistician::lenght() const
+  {
 
+  }
 
+  double::statistician::sum() const
+  {
 
+  }
+  double::statistician::mean() const
+  {
+    assert();
+  }
 
+  double::statistician::minimum() const
+  {
+    assert();
+  }
 
+  double::statistician::maximum() const
+  {
+    assert();
+  }
+
+  statistician operator +
+        (const statistician& s1, const statistician& s2)
+        {
+
+        }
+
+  statistician operator *
+        (double scale, const statistician& s)
+        {
+
+        }
+
+  bool operator ==(const statistician& s1, const statistician& s2)
+  {
+
+  }
 
 
 }
