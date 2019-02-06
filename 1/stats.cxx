@@ -57,7 +57,7 @@ namespace main_savitch_2C
     //     Postcondition: The return value is the arithmetic mean (i.e., the
     //     average of all the numbers in the statistician's sequence).
   {
-    assert(count>0);
+    assert(count!=0);
     return total/count ;
   }
 
@@ -66,13 +66,13 @@ namespace main_savitch_2C
 //     Postcondition: The return value is the tinyest number in the
 //     statistician's sequence.
   {
-    assert(count>0);
+    assert(count!=0);
     return tinyest;
   }
 
   double statistician::maximum() const
   {
-  assert(count>0);
+  assert(count!=0);
   return largest;
   }
 
@@ -84,6 +84,7 @@ namespace main_savitch_2C
         {
           statistician totalS;
           totalS.total = s1.total + s2.total;
+          totalS.count = s1.count + s2.count;
           return totalS;
         }
 
