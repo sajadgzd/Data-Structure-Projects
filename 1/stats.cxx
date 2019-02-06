@@ -1,7 +1,8 @@
 
 #include <iostream>
 #include <math.h>
-#include "newpoint.h"
+#include <cassert>
+#include "stats.h"
 using namespace std;
 
 namespace main_savitch_2C
@@ -16,6 +17,7 @@ namespace main_savitch_2C
 
   void statistician::next(double r)
   {
+    count++;
 
   }
 
