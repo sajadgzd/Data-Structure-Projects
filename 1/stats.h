@@ -1,5 +1,5 @@
-// Provided by:   ____________(your name here)__________
-// Email Address: ____________(your email address here)________
+// Provided by:   ____________(Sajad Gholamzadehrizi)__________
+// Email Address: ____________(sajad1993gh@gmail.com)________
 // FILE: stats.h
 // CLASS PROVIDED: statistician
 //   (a class to keep track of statistics on a sequence of real numbers)
@@ -18,7 +18,7 @@
 //   void reset( );
 //     Postcondition: The statistician has been cleared, as if no numbers had
 //     yet been given to it.
-//   
+//
 // PUBLIC CONSTANT member functions for the statistician class:
 //   int length( ) const
 //     Postcondition: The return value is the length of the sequence that has
@@ -51,9 +51,9 @@
 //   bool operator ==(const statistician& s1, const statistician& s2)
 //     Postcondition: The return value is true if s1 and s2 have the zero
 //     length. Also, if the length is greater than zero, then s1 and s2 must
-//     have the same length, the same  mean, the same minimum, 
+//     have the same length, the same  mean, the same minimum,
 //     the same maximum, and the same sum.
-//     
+//
 // VALUE SEMANTICS for the statistician class:
 // Assignments and the copy constructor may be used with statistician objects.
 
