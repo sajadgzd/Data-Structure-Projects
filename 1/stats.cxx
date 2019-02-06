@@ -31,21 +31,21 @@ namespace main_savitch_2C
 
   }
 
-  double::statistician::sum() const
+  double statistician::sum() const
   {
 
   }
-  double::statistician::mean() const
-  {
-    assert();
-  }
-
-  double::statistician::minimum() const
+  double statistician::mean() const
   {
     assert();
   }
 
-  double::statistician::maximum() const
+  double statistician::minimum() const
+  {
+    assert();
+  }
+
+  double statistician::maximum() const
   {
     assert();
   }
