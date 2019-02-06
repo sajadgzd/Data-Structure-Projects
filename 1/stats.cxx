@@ -67,28 +67,52 @@ namespace main_savitch_2C
 //     statistician's sequence.
   {
     assert(count>0);
-    //return
+    return tinyest;
   }
 
   double statistician::maximum() const
   {
-  //assert();
+  assert(count>0);
+  return largest;
   }
 
   statistician operator +
         (const statistician& s1, const statistician& s2)
-        {
+//     Postcondition: The statistician that is returned contains all the
+//     numbers of the sequences of s1 and s2.
 
+        {
+          statistician totalS;
+          totalS.total = s1.total + s2.total;
+          return totalS;
         }
 
   statistician operator *
         (double scale, const statistician& s)
+//     Postcondition: The statistician that is returned contains the same
+//     numbers that s does, but each number has been multiplied by the
+//     scale number.
         {
+          statistician multipliedS;
+          multipliedS.total = scale * s.total;
+          multipliedS.count = scale * s.total;
+          multipliedS.tinyest = scale * s.tinyest;
+          multipliedS.largest = scale * s.largest;
+          return multipliedS;
 
         }
 
   bool operator ==(const statistician& s1, const statistician& s2)
+  //     Postcondition: The return value is true if s1 and s2 have the zero
+  //     length. Also, if the length is greater than zero, then s1 and s2 must
+  //     have the same length, the same  mean, the same minimum,
+  //     the same maximum, and the same sum.
   {
+    if(s1.length()==0 && s2.length()==0){
+      return s1==s2;
+    }
+
+
 
   }
 
