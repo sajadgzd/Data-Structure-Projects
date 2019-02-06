@@ -83,6 +83,9 @@ namespace main_savitch_2C
 
         {
           statistician totalS;
+          if (s1.length( ) == 0) return s2;
+          if (s2.length( ) == 0) return s1;
+
           totalS.total = s1.total + s2.total;
           totalS.count = s1.count + s2.count;
           if(s1.tinyest<=s2.tinyest) totalS.tinyest = s1.tinyest;
