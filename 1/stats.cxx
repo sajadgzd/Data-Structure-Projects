@@ -11,8 +11,8 @@ namespace main_savitch_2C
   {
     count= 0;
     total= 0;
-    //tinyest;
-    //largest;
+    //tinyest=0;
+    //largest=0;
   }
 
   void statistician::next(double r)
@@ -85,8 +85,10 @@ namespace main_savitch_2C
           statistician totalS;
           totalS.total = s1.total + s2.total;
           totalS.count = s1.count + s2.count;
-          totalS.tinyest = s1.tinyest + s2.tinyest;
-          totalS.largest = s1.largest + s2.largest;
+          if(s1.tinyest<=s2.tinyest) totalS.tinyest = s1.tinyest;
+          else totalS.tinyest = s2.tinyest;
+          if(s1.largest>=s2.largest) totalS.largest = s1.largest;
+          else totalS.largest = s2.largest;
           return totalS;
         }
 
