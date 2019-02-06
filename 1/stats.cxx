@@ -110,7 +110,8 @@ namespace main_savitch_2C
 
         }
 
-  bool operator ==(const statistician& s1, const statistician& s2)
+  bool operator ==
+        (const statistician& s1, const statistician& s2)
   //     Postcondition: The return value is true if s1 and s2 have the zero
   //     length. Also, if the length is greater than zero, then s1 and s2 must
   //     have the same length, the same  mean, the same minimum,
