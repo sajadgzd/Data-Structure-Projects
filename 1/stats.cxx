@@ -127,9 +127,9 @@ namespace main_savitch_2C
   //     the same maximum, and the same sum.
   {
     if(s1.length()==0 && s2.length()==0){
-      return s1==s2;
+      return true;
     }
-    else if(s1.length()>0 && s2.length()>0){
+    else {
       return
         (s1.length()==s2.length())
         &&
