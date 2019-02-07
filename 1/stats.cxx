@@ -102,12 +102,21 @@ namespace main_savitch_2C
 //     scale number.
         {
           statistician multipliedS;
+          //if(s.count==0) return s;
+          //else{
           multipliedS.total = scale * s.total;
-          multipliedS.count = scale * s.count;
-          multipliedS.tinyest = scale * s.tinyest;
-          multipliedS.largest = scale * s.largest;
-          return multipliedS;
+          multipliedS.count = s.count;
+          if(scale<0){
+          multipliedS.tinyest = (scale) * s.largest;
+          multipliedS.largest = (scale) * s.tinyest;
+          }
+          else {
+          multipliedS.tinyest = (scale) * s.tinyest;
+          multipliedS.largest = (scale) * s.largest;
+          }
 
+          return multipliedS;
+          //}
         }
 
   bool operator ==
