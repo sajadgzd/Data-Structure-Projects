@@ -41,9 +41,6 @@ namespace main_savitch_2C
   }
 
   int statistician::length() const
-  //     Postcondition: The return value is the length of the sequence that has
-  //     been given to the statistician (i.e., the number of times that the
-  //     next(r) function has been activated).
   {
     return count;
   }
@@ -53,18 +50,12 @@ namespace main_savitch_2C
     return total;
   }
   double statistician::mean() const
-    //     Precondition: length( ) > 0
-    //     Postcondition: The return value is the arithmetic mean (i.e., the
-    //     average of all the numbers in the statistician's sequence).
   {
     assert(count!=0);
     return total/count ;
   }
 
   double statistician::minimum() const
-//     Precondition: length( ) > 0
-//     Postcondition: The return value is the tinyest number in the
-//     statistician's sequence.
   {
     assert(count!=0);
     return tinyest;
@@ -78,9 +69,6 @@ namespace main_savitch_2C
 
   statistician operator +
         (const statistician& s1, const statistician& s2)
-//     Postcondition: The statistician that is returned contains all the
-//     numbers of the sequences of s1 and s2.
-
         {
           statistician totalS;
           if (s1.length( ) == 0) return s2;
@@ -97,9 +85,6 @@ namespace main_savitch_2C
 
   statistician operator *
         (double scale, const statistician& s)
-//     Postcondition: The statistician that is returned contains the same
-//     numbers that s does, but each number has been multiplied by the
-//     scale number.
         {
           statistician multipliedS;
           //if(s.count==0) return s;
@@ -121,10 +106,6 @@ namespace main_savitch_2C
 
   bool operator ==
         (const statistician& s1, const statistician& s2)
-  //     Postcondition: The return value is true if s1 and s2 have the zero
-  //     length. Also, if the length is greater than zero, then s1 and s2 must
-  //     have the same length, the same  mean, the same minimum,
-  //     the same maximum, and the same sum.
   {
     if(s1.length()==0 && s2.length()==0){
       return true;
