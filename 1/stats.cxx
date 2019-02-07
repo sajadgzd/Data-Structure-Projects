@@ -1,6 +1,5 @@
 
 #include <iostream>
-//#include <math.h>
 #include <cassert>
 #include "stats.h"
 using namespace std;
