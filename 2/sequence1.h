@@ -1,3 +1,5 @@
+// Provided by:   ____________(Sajad Gholamzadehrizi)__________
+// Email Address: ____________(sajad1993gh@gmail.com)________
 // FILE: sequence1.h
 // CLASS PROVIDED: sequence (part of the namespace main_savitch_3)
 // There is no implementation file provided for this class since it is
@@ -34,14 +36,14 @@
 //   void insert(const value_type& entry)
 //     Precondition: size( ) < CAPACITY.
 //     Postcondition: A new copy of entry has been inserted in the sequence
-//     before the current item. If there was no current item, then the new entry 
+//     before the current item. If there was no current item, then the new entry
 //     has been inserted at the front of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
 //   void attach(const value_type& entry)
 //     Precondition: size( ) < CAPACITY.
 //     Postcondition: A new copy of entry has been inserted in the sequence after
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been attached to the end of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
@@ -100,4 +102,3 @@ namespace main_savitch_3
 }
 
 #endif
-
