@@ -1,10 +1,12 @@
 // FILE: sequence1.cxx
 // CLASS IMPLEMENTED: sequence (see sequence1.h for documentation)
-// INVARIANT for the bag class:
-//   1. The number of items in the bag is in the member variable used;
-//   2. For an empty bag, we do not care what is stored in any of data; for a
-//      non-empty bag the items in the bag are stored in data[0] through
+// INVARIANT for the sequence class:
+//   1. The number of items in the sequence is stored in the member variable used;
+//   2. For an empty sequence, we do not care what is stored in any of data; for a
+//      non-empty sequence the items are stored in a sequence order from data[0] through
 //      data[used-1], and we don't care what's in the rest of data.
+//   3.If there is a current item, then it lies in data[current_index]; if there is
+//   no current item, then current_index equals used.
 
 #include <algorithm> // Provides copy function
 #include <cassert>   // Provides assert function
@@ -79,7 +81,7 @@ namespace main_savitch_3
   //     Precondition: is_item( ) returns true.
   //     Postcondition: The item returned is the current item in the sequence.
   {
-    return current_index;
+    return data[current_index];
   }
 
 
