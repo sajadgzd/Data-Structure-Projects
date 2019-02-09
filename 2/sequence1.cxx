@@ -33,9 +33,9 @@ namespace main_savitch_3
   //     sequence, then there is no longer any current item. Otherwise, the new
   //     current item is the item immediately after the original current item.
   {
-    if(is_item()){
+    assert(is_item());
     current_index++;
-    }
+
 
   }
   void sequence::insert(const value_type& entry)
