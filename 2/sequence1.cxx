@@ -19,6 +19,7 @@ namespace main_savitch_3
   sequence::sequence()
   {
     used = 0;
+    current_index = 0;
   }
   void sequence::start()
   //     Postcondition: The first item on the sequence becomes the current item
@@ -32,9 +33,9 @@ namespace main_savitch_3
   //     sequence, then there is no longer any current item. Otherwise, the new
   //     current item is the item immediately after the original current item.
   {
-    assert(is_item());
-    if(current_index>=used-1) current_index = used;
-    else current_index++;
+    if(is_item()){
+    current_index++;
+    }
 
   }
   void sequence::insert(const value_type& entry)
@@ -94,7 +95,7 @@ namespace main_savitch_3
   //     member function (listed below). A false return value indicates that
   //     there is no valid current item.
   {
-    if(current_index<used) return true;
+    if(current_index < used) return true;
     else return false;
   }
   sequence::value_type sequence::current( ) const
