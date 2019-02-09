@@ -16,13 +16,13 @@ namespace main_savitch_3
   const sequence::size_type sequence::CAPACITY;
   sequence::sequence()
   {
-
+    used = 0;
   }
   void sequence::start()
   //     Postcondition: The first item on the sequence becomes the current item
   //     (but if the sequence is empty, then there is no current item).
   {
-    cur = first
+    current_index = first;
   }
   void sequence::advance()
   //     Precondition: is_item returns true.
@@ -30,7 +30,7 @@ namespace main_savitch_3
   //     sequence, then there is no longer any current item. Otherwise, the new
   //     current item is the item immediately after the original current item.
   {
-    cur = next
+    current_index = next;
 
   }
   void sequence::insert(const value_type& entry)
@@ -41,7 +41,7 @@ namespace main_savitch_3
   //     inserted item is now the current item of the sequence.
   {
     assert(size() < CAPACITY);
-    cur = entry
+    current_index = entry;
   }
   void sequence::attach(const value_type& entry)
   //     Precondition: size( ) < CAPACITY.
@@ -50,7 +50,7 @@ namespace main_savitch_3
   //     been attached to the end of the sequence. In either case, the newly
   //     inserted item is now the current item of the sequence.
   {
-    cur entry
+    current_index = entry;
   }
   void sequence::remove_current()
   //     Precondition: is_item returns true.
@@ -58,14 +58,14 @@ namespace main_savitch_3
   //     item after this (if there is one) is now the new current item.
   {
     assert(is_item());
-    data[cur]=data[cur+1]
+    data[current_index]=data[current_index+1]
 
   }
   sequence::size_type sequence::size( ) const
   //   size_type size( ) const
   //     Postcondition: The return value is the number of items in the sequence.
   {
-    return x;
+    return used;
   }
   bool sequence::is_item( ) const
   //     Postcondition: A true return value indicates that there is a valid
@@ -79,7 +79,7 @@ namespace main_savitch_3
   //     Precondition: is_item( ) returns true.
   //     Postcondition: The item returned is the current item in the sequence.
   {
-    return cur
+    return current_index;
   }
 
 
