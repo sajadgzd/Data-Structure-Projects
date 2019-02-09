@@ -44,7 +44,13 @@ namespace main_savitch_3
   //     inserted item is now the current item of the sequence.
   {
     assert(size() < CAPACITY);
-    current_index = entry;
+    size_type i;
+    if(!is_item()) current_index = 0;
+    for(i= used; i > current_index; i--){
+      data[i]=data[i-1];
+    }
+    data[current_index=entry];
+    used++;
   }
   void sequence::attach(const value_type& entry)
   //     Precondition: size( ) < CAPACITY.
@@ -63,7 +69,7 @@ namespace main_savitch_3
     assert(is_item());
     size_type i;
     for(i = current_index+1 ; i< used ; i++){
-      data[i]=data[i+1]
+      data[i-1]=data[i]
     }
     used--;
   }
