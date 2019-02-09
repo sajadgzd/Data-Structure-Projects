@@ -62,12 +62,12 @@ namespace main_savitch_3
     assert(size() < CAPACITY);
     size_type i;
     if(!is_item()) current_index = used;
+    current_index++;
     for(i= used; i > current_index; i--){
       data[i]=data[i-1];
     }
-    data[current_index=entry];
+    data[current_index]=entry;
     used++;
-    current_index = entry;
   }
   void sequence::remove_current()
   //     Precondition: is_item returns true.

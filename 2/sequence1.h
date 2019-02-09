@@ -96,11 +96,9 @@ namespace main_savitch_3
         bool is_item( ) const;
         value_type current( ) const;
     private:
-	//-- Fill in your private member variables here.
-	//-- Read Section 3.2 for guidelines.
-        data[CAPACITY]; //array for storing the sequence
-        used; //size of array
-        current_index; //index of current item in the array
+        value_type data[CAPACITY]; //array for storing the sequence
+        size_type used; //size of array
+        size_type current_index; //index of current item in the array
     };
 }
 
