@@ -14,7 +14,42 @@ using namespace std;
 namespace main_savitch_3
 {
   const sequence::size_type sequence::CAPACITY;
-  
+  sequence::sequence()
+  {
+
+  }
+  void sequence::start()
+  {
+
+  }
+  void sequence::advance()
+  {
+
+  }
+  void sequence::insert(const value_type& entry)
+  {
+
+  }
+  void sequence::attach(const value_type& entry)
+  {
+
+  }
+  void sequence::remove_current()
+  {
+
+  }
+  sequence::size_type sequence::size( ) const
+  {
+
+  }
+  bool sequence::is_item( ) const
+  {
+
+  }
+  sequence::value_type sequence::current( ) const
+  {
+
+  }
 
 
 

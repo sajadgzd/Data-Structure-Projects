@@ -96,8 +96,8 @@ namespace main_savitch_3
         bool is_item( ) const;
         value_type current( ) const;
     private:
-	-- Fill in your private member variables here.
-	-- Read Section 3.2 for guidelines.
+	//-- Fill in your private member variables here.
+	//-- Read Section 3.2 for guidelines.
     };
 }
 
