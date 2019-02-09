@@ -13,7 +13,8 @@ using namespace std;
 
 namespace main_savitch_3
 {
-
+  const sequence::size_type sequence::CAPACITY;
+  
 
 
 
