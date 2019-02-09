@@ -98,6 +98,9 @@ namespace main_savitch_3
     private:
 	//-- Fill in your private member variables here.
 	//-- Read Section 3.2 for guidelines.
+        data[CAPACITY]; //array for storing the sequence
+        used; //size of array
+        current_index; //index of current item in the array
     };
 }
 
