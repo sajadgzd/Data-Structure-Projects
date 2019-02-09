@@ -24,7 +24,7 @@ namespace main_savitch_3
   //     Postcondition: The first item on the sequence becomes the current item
   //     (but if the sequence is empty, then there is no current item).
   {
-    current_index = first;
+    current_index = 0;
   }
   void sequence::advance()
   //     Precondition: is_item returns true.
@@ -32,8 +32,9 @@ namespace main_savitch_3
   //     sequence, then there is no longer any current item. Otherwise, the new
   //     current item is the item immediately after the original current item.
   {
-    current_index++;
-    if(current_index>used) current_index = used;
+    assert(is_item());
+    if(current_index>=used-1) current_index = used;
+    else current_index++;
 
   }
   void sequence::insert(const value_type& entry)
@@ -77,7 +78,7 @@ namespace main_savitch_3
     assert(is_item());
     size_type i;
     for(i = current_index+1 ; i< used ; i++){
-      data[i-1]=data[i]
+      data[i-1]=data[i];
     }
     used--;
   }
@@ -93,15 +94,15 @@ namespace main_savitch_3
   //     member function (listed below). A false return value indicates that
   //     there is no valid current item.
   {
-
+    if(current_index<used) return true;
+    else return false;
   }
   sequence::value_type sequence::current( ) const
   //     Precondition: is_item( ) returns true.
   //     Postcondition: The item returned is the current item in the sequence.
   {
+    assert(is_item());
     return data[current_index];
   }
-
-
 
 }
