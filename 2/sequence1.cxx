@@ -61,10 +61,11 @@ namespace main_savitch_3
   //     item after this (if there is one) is now the new current item.
   {
     assert(is_item());
-    data[current_index]=data[used-1];
-    data[current_index]=data[current_index++]
+    size_type i;
+    for(i = current_index+1 ; i< used ; i++){
+      data[i]=data[i+1]
+    }
     used--;
-
   }
   sequence::size_type sequence::size( ) const
   //   size_type size( ) const
