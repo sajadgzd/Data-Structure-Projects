@@ -32,7 +32,8 @@ namespace main_savitch_3
   //     sequence, then there is no longer any current item. Otherwise, the new
   //     current item is the item immediately after the original current item.
   {
-    current_index = next;
+    current_index++;
+    if(current_index>used) current_index = used;
 
   }
   void sequence::insert(const value_type& entry)
@@ -60,7 +61,9 @@ namespace main_savitch_3
   //     item after this (if there is one) is now the new current item.
   {
     assert(is_item());
-    data[current_index]=data[current_index+1]
+    data[current_index]=data[used-1];
+    data[current_index]=data[current_index++]
+    used--;
 
   }
   sequence::size_type sequence::size( ) const
