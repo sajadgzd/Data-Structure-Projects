@@ -63,7 +63,7 @@ namespace main_savitch_3
   {
     assert(size() < CAPACITY);
     size_type i;
-    if(!is_item()) current_index = used;
+    if(!is_item()) current_index = used-1;
     current_index++;
     for(i= used; i > current_index; i--){
       data[i]=data[i-1];
