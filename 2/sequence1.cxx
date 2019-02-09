@@ -49,7 +49,7 @@ namespace main_savitch_3
     for(i= used; i > current_index; i--){
       data[i]=data[i-1];
     }
-    data[current_index=entry];
+    data[current_index]=entry;
     used++;
   }
   void sequence::attach(const value_type& entry)
@@ -59,6 +59,14 @@ namespace main_savitch_3
   //     been attached to the end of the sequence. In either case, the newly
   //     inserted item is now the current item of the sequence.
   {
+    assert(size() < CAPACITY);
+    size_type i;
+    if(!is_item()) current_index = used;
+    for(i= used; i > current_index; i--){
+      data[i]=data[i-1];
+    }
+    data[current_index=entry];
+    used++;
     current_index = entry;
   }
   void sequence::remove_current()
