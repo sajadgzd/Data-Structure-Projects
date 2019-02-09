@@ -1,4 +1,4 @@
-// FILE: sequence_test.cxx
+ // FILE: sequence_test.cxx
 // An interactive test program for the new sequence class
 #include <cctype>       // Provides toupper
 #include <iostream>     // Provides cout and cin

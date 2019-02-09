@@ -1,3 +1,5 @@
+// Provided by:   ____________(Sajad Gholamzadehrizi)__________
+// Email Address: ____________(sajad1993gh@gmail.com)________
 // FILE: sequence1.cxx
 // CLASS IMPLEMENTED: sequence (see sequence1.h for documentation)
 // INVARIANT for the sequence class:
