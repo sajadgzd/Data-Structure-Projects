@@ -10,8 +10,7 @@
 //   3.If there is a current item, then it lies in data[current_index]; if there is
 //   no current item, then current_index equals used.
 
-#include <cassert>   // Provides assert function
-#include "sequence1.h"
+#include <cassert>   // Provides assert function . k
 using namespace std;
 
 namespace main_savitch_3
