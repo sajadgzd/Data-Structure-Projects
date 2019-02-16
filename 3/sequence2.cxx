@@ -11,6 +11,9 @@
  //      data[used-1], and we don't care what's in the rest of data.
  //   3.If there is a current item, then it lies in data[current_index]; if there is
  //   no current item, then current_index equals used.
+ //   4. The actual items of the sequence are stored in a partially filled dynamic array.
+//      The array is dynamic, pointed to by the member variable data.
+//    5. The total size of the dynamic array in the member variable capacity.
 
  #include <cassert>   // Provides assert function . k
  using namespace std;
