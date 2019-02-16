@@ -115,15 +115,17 @@ namespace main_savitch_4
         bool is_item( ) const;
         value_type current( ) const;
     private:
-	-- Fill in your private member variables here.
+	/*-- Fill in your private member variables here.
         -- You'll need a pointer to a dynamic array, and a size_type
         -- variable to keep track of the current length of the
         -- sequence, an index to the current item, and
 	-- another size_type variable to keep track of the
         -- complete capacity of the dynamic array. ??
+        */
         value_type *data; //Dynamic array for storing the sequence
         size_type used; //size of array
         size_type current_index; //index of current item in the array
+        size_type capacity; //current capacity of the sequence
     };
 }
 
