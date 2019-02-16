@@ -116,6 +116,10 @@ namespace main_savitch_4
         size_type size( ) const;
         bool is_item( ) const;
         value_type current( ) const;
+        //optional: Operators + and +=
+        //sequence operator +(const sequence& s1, const sequence& s2);
+        //void operator +=(const sequence& addend);
+        //value_type operator[](size_type index) const;
     private:
 	/*-- Fill in your private member variables here.
         -- You'll need a pointer to a dynamic array, and a size_type

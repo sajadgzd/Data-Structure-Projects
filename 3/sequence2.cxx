@@ -20,6 +20,14 @@
 
  namespace main_savitch_4
  {
+   sequence::sequence(size_type initial_capacity)
+   {
+   data = new value_type[initial_capacity];
+   capacity = initial_capacity;
+   used = 0;
+   current_index = 0;
+   }
+   
 
 
 

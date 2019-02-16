@@ -95,6 +95,7 @@ namespace main_savitch_3
         size_type size( ) const;
         bool is_item( ) const;
         value_type current( ) const;
+        
     private:
         value_type data[CAPACITY]; //array for storing the sequence
         size_type used; //size of array
