@@ -17,6 +17,7 @@
 
  #include <cassert>   // Provides assert function
  #include <algorithm> // Provides copy function
+ #include "sequence2.h"
  using namespace std;
 
  namespace main_savitch_4

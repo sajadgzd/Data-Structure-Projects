@@ -11,6 +11,7 @@
 //   no current item, then current_index equals used.
 
 #include <cassert>   // Provides assert function
+#include "sequence1.h"
 using namespace std;
 
 namespace main_savitch_3

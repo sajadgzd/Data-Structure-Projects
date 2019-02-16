@@ -85,7 +85,7 @@
 //
 // DYNAMIC MEMORY USAGE by the sequence
 //   If there is insufficient dynamic memory, then the following functions
-//   call new_handler: The constructors, insert, attach.
+//   call new_handler: The constructors, insert, attach, assignment operator.
 
 #ifndef MAIN_SAVITCH_SEQUENCE2_H
 #define MAIN_SAVITCH_SEQUENCE2_H
