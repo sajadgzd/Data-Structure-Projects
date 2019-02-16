@@ -23,6 +23,7 @@
  namespace main_savitch_4
  {
    const sequence::size_type sequence::DEFAULT_CAPACITY;
+
    sequence::sequence(size_type initial_capacity)
    {
    data = new value_type[initial_capacity];
@@ -58,9 +59,14 @@
 
    void sequence::insert(const value_type& entry)
    {
+     if (used > capacity)
+     {
+       resize(capacity + (0.1*capacity));
+     }
      size_type i;
      if(!is_item()) current_index = 0;
-     for(i= used; i > current_index; i--){
+     for(i= used; i > current_index; i--)
+     {
        data[i]=data[i-1];
      }
      data[current_index]=entry;
@@ -91,16 +97,16 @@
      used--;
    }
 
-   void resize(size_type new_capacity)
+   void resize(sequence::size_type new_capacity)
    //library facility used: algorithm
    {
-     value_type* larger_array;
+     sequence::value_type* larger_array;
      if(new_capacity == capacity)
       return;
      if(new_capacity<used)
       new_capacity == used;
-     larger_array = new value_type[new_capacity];
-     copy(data, data+used, larger_array)
+     larger_array = new sequence::value_type[new_capacity];
+     copy(data, data+used, larger_array);
      delete[] data;
      data = larger_array;
      capacity = new_capacity;
