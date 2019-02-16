@@ -1,5 +1,5 @@
-// Provided by:   ____________(your name here)__________
-// Email Address: ____________(your email address here)________
+// Provided by:   ____________(Sajad Gholamzadehrizi)__________
+// Email Address: ____________(sajad1993gh@gmail.com)________
 // FILE: sequence2.h
 // CLASS PROVIDED: sequence (part of the namespace main_savitch_4)
 // There is no implementation file provided for this class since it is
@@ -28,8 +28,10 @@
 //     new memory) until this capacity is reached.
 //
 //     sequence(const sequence& source)
-      - write the preconditions and postconditions yourself!
+//      Postcondition: The sequence that's being constructed has been initialized
+//      with the same items and capacity as source.
 //
+
 // MODIFICATION MEMBER FUNCTIONS for the sequence class:
 //   void resize(size_type new_capacity)
 //     Postcondition: The sequence's current capacity is changed to the
