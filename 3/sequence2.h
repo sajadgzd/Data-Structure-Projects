@@ -32,7 +32,7 @@
 //
 // MODIFICATION MEMBER FUNCTIONS for the sequence class:
 //   void resize(size_type new_capacity)
-//     Postcondition: The sequence's current capacity is changed to the 
+//     Postcondition: The sequence's current capacity is changed to the
 //     new_capacity (but not less that the number of items already on the
 //     sequence). The insert/attach functions will work efficiently (without
 //     allocating new memory) until this new capacity is reached.
@@ -49,13 +49,13 @@
 //
 //   void insert(const value_type& entry)
 //     Postcondition: A new copy of entry has been inserted in the sequence before
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been inserted at the front of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
 //   void attach(const value_type& entry)
 //     Postcondition: A new copy of entry has been inserted in the sequence after
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been attached to the end of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
@@ -83,7 +83,7 @@
 //
 // DYNAMIC MEMORY USAGE by the sequence
 //   If there is insufficient dynamic memory, then the following functions
-//   call new_handler: The constructors, insert, attach. 
+//   call new_handler: The constructors, insert, attach.
 
 #ifndef MAIN_SAVITCH_SEQUENCE2_H
 #define MAIN_SAVITCH_SEQUENCE2_H
@@ -118,11 +118,13 @@ namespace main_savitch_4
 	-- Fill in your private member variables here.
         -- You'll need a pointer to a dynamic array, and a size_type
         -- variable to keep track of the current length of the
-        -- sequence, an index to the current item, and 
+        -- sequence, an index to the current item, and
 	-- another size_type variable to keep track of the
-        -- complete capacity of the dynamic array.
+        -- complete capacity of the dynamic array. ??
+        value_type *data; //Dynamic array for storing the sequence
+        size_type used; //size of array
+        size_type current_index; //index of current item in the array
     };
 }
 
 #endif
-
