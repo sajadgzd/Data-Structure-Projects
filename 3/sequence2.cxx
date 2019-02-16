@@ -1,5 +1,3 @@
- //a constructor, start, insert, advance, and current
-
  // Provided by:   ____________(Sajad Gholamzadehrizi)__________
  // Email Address: ____________(sajad1993gh@gmail.com)_________
  // FILE: sequence2.cxx
@@ -16,13 +14,17 @@
 //    5. The total size of the dynamic array in the member variable capacity.
 
  #include <cassert>   // Provides assert function
+ #include <cstdlib>  // Provides size_t
  #include <algorithm> // Provides copy function
  #include "sequence2.h"
  using namespace std;
 
  namespace main_savitch_4
  {
-   const sequence::size_type sequence::DEFAULT_CAPACITY;
+   typedef double value_type;
+   typedef size_t size_type;
+   const sequence::size_type
+   sequence::DEFAULT_CAPACITY;
 
    sequence::sequence(size_type initial_capacity)
    {
@@ -45,6 +47,21 @@
      delete[] data;
    }
 
+   void resize(size_type new_capacity)
+   //library facility used: algorithm
+   {
+     value_type* larger_array;
+     if(new_capacity == capacity)
+      return;
+     if(new_capacity<used)
+      new_capacity == used;
+     larger_array = new value_type[new_capacity];
+     copy(data, data+used, larger_array);
+     delete[] data;
+     data = larger_array;
+     capacity = new_capacity;
+   }
+   
    void sequence::start()
    {
      current_index = 0;
@@ -75,6 +92,10 @@
 
    void sequence::attach(const value_type& entry)
    {
+     if (used > capacity)
+     {
+       resize(capacity + (0.1*capacity));
+     }
      size_type i;
      if(!is_item()) current_index = used-1;
      current_index++;
@@ -97,21 +118,6 @@
      used--;
    }
 
-   void resize(sequence::size_type new_capacity)
-   //library facility used: algorithm
-   {
-     sequence::value_type* larger_array;
-     if(new_capacity == capacity)
-      return;
-     if(new_capacity<used)
-      new_capacity == used;
-     larger_array = new sequence::value_type[new_capacity];
-     copy(data, data+used, larger_array);
-     delete[] data;
-     data = larger_array;
-     capacity = new_capacity;
-   }
-
    void sequence::operator =(const sequence& source)
    //library facility used: algorithm
    {
@@ -130,7 +136,7 @@
      copy(source.data, source.data + used, data);
    }
 
-   sequence::size_type sequence::size( ) const
+   size_type sequence::size( ) const
    {
      return used;
    }
@@ -139,7 +145,7 @@
      if(current_index < used) return true;
      else return false;
    }
-   sequence::value_type sequence::current( ) const
+   value_type sequence::current( ) const
    {
      assert(is_item());
      return data[current_index];
