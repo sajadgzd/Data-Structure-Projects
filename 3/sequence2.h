@@ -90,6 +90,7 @@
 #ifndef MAIN_SAVITCH_SEQUENCE2_H
 #define MAIN_SAVITCH_SEQUENCE2_H
 #include <cstdlib>  // Provides size_t
+using namespace std;
 
 namespace main_savitch_4
 {
@@ -116,23 +117,19 @@ namespace main_savitch_4
         size_type size( ) const;
         bool is_item( ) const;
         value_type current( ) const;
-        //optional: Operators + and +=
+        //optional:
         //sequence operator +(const sequence& s1, const sequence& s2);
-        //void operator +=(const sequence& addend);
-        //value_type operator[](size_type index) const;
+        void operator +=(const sequence& source);
+        value_type operator[](size_type index) const;
     private:
-	/*-- Fill in your private member variables here.
-        -- You'll need a pointer to a dynamic array, and a size_type
-        -- variable to keep track of the current length of the
-        -- sequence, an index to the current item, and
-	-- another size_type variable to keep track of the
-        -- complete capacity of the dynamic array. ??
-        */
+
         value_type *data; //Dynamic array for storing the sequence
         size_type used; //size of array
         size_type current_index; //index of current item in the array
         size_type capacity; //current capacity of the sequence
     };
+    sequence operator +(const sequence& source1, const sequence& source2);
+
 }
 
 #endif

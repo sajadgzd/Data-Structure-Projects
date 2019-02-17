@@ -4,156 +4,159 @@
  // CLASS IMPLEMENTED: sequence (see sequence2.h for documentation)
  // INVARIANT for the sequence class:
  //   1. The number of items in the sequence is stored in the member variable used;
- //   2. For an empty sequence, we do not care what is stored in any of data; for a
- //      non-empty sequence the items are stored in a sequence order from data[0] through
- //      data[used-1], and we don't care what's in the rest of data.
- //   3.If there is a current item, then it lies in data[current_index]; if there is
+ //   2. If there is a current item, then it lies in data[current_index]; if there is
  //   no current item, then current_index equals used.
- //   4. The actual items of the sequence are stored in a partially filled dynamic array.
+ //   3. The actual items of the sequence are stored in a partially filled dynamic array.
 //      The array is dynamic, pointed to by the member variable data.
-//    5. The total size of the dynamic array in the member variable capacity.
+//      A larger dynamic array may be constructed if needed as the program runs.
+//    4. The total size of the dynamic array(current capacity) is in the member variable capacity.
 
- #include <cassert>   // Provides assert function
- #include <cstdlib>  // Provides size_t
- #include <algorithm> // Provides copy function
- #include "sequence2.h"
- using namespace std;
+#include <algorithm>
+#include <cassert>
+#include "sequence2.h"
 
- namespace main_savitch_4
- {
-   typedef double value_type;
-   typedef size_t size_type;
-   const sequence::size_type
-   sequence::DEFAULT_CAPACITY;
+namespace main_savitch_4
+{
+  const sequence::size_type sequence::DEFAULT_CAPACITY;
 
-   sequence::sequence(size_type initial_capacity)
-   {
-   data = new value_type[initial_capacity];
-   capacity = initial_capacity;
-   used = 0;
-   current_index = 0;
-   }
+	sequence::sequence(size_type initial_capacity)
+	{
+		data = new value_type [initial_capacity];
+		capacity = initial_capacity;
+		used = 0;
+    current_index = 0;
+	}
 
-   sequence::sequence(const sequence& source)
-   {
-     data = new value_type[source.capacity];
-     capacity = source.capacity;
-     used = source.used;
-     copy(source.data, source.data + used, data);
-   }
+	sequence::sequence(const sequence& source)
+	{
+		if(this != &source) {
+			data = new value_type [source.capacity];
+			std::copy(source.data, source.data+source.used, data);
+			capacity = source.capacity;
+			used = source.used;
+			if(source.is_item())
+				current_index = source.current_index;
+		}
+	}
 
-   sequence::~sequence()
-   {
-     delete[] data;
-   }
+	sequence::~sequence()
+	{
+		delete [] data;
+	}
 
-   void resize(size_type new_capacity)
-   //library facility used: algorithm
-   {
-     value_type* larger_array;
-     if(new_capacity == capacity)
-      return;
-     if(new_capacity<used)
-      new_capacity == used;
-     larger_array = new value_type[new_capacity];
-     copy(data, data+used, larger_array);
-     delete[] data;
-     data = larger_array;
-     capacity = new_capacity;
-   }
-   
-   void sequence::start()
-   {
-     current_index = 0;
-   }
+	void sequence::resize(size_type new_capacity)
+	{
+    value_type *larger_array;
+		if(new_capacity > used) {
+			larger_array = new value_type [new_capacity];
+			std::copy(data, data+used, larger_array);
+			delete [] data;
+			data = larger_array;
+			capacity = new_capacity;
+		}
+	}
 
-   //
-   void sequence::advance()
-   {
-     assert(is_item());
-     current_index++;
-   }
+	void sequence::start()
+	{
+			current_index = 0;
+	}
 
-   void sequence::insert(const value_type& entry)
-   {
-     if (used > capacity)
-     {
-       resize(capacity + (0.1*capacity));
-     }
-     size_type i;
-     if(!is_item()) current_index = 0;
-     for(i= used; i > current_index; i--)
-     {
-       data[i]=data[i-1];
-     }
-     data[current_index]=entry;
-     used++;
-   }
+	void sequence::advance()
+	{
+		assert(is_item());
+		current_index++;
+	}
 
-   void sequence::attach(const value_type& entry)
-   {
-     if (used > capacity)
-     {
-       resize(capacity + (0.1*capacity));
-     }
-     size_type i;
-     if(!is_item()) current_index = used-1;
-     current_index++;
-     for(i= used; i > current_index; i--)
-     {
-       data[i]=data[i-1];
-     }
-     data[current_index]=entry;
-     used++;
-   }
+	void sequence::insert(const value_type& entry)
+	{
+		if( size() == capacity )
+			resize(capacity+(0.1*capacity));
+		if(!is_item())
+      current_index = 0;
+		for(size_type i = used; i > current_index; i--)
+    {
+			data[i] = data[i-1];
+    }
+		data[current_index] = entry;
+		used++;
+	}
 
-   void sequence::remove_current()
-   {
-     assert(is_item());
-     size_type i;
-     for(i = current_index+1 ; i< used ; i++)
-     {
-       data[i-1]=data[i];
-     }
-     used--;
-   }
+	void sequence::attach(const value_type& entry)
+	{
+		if( size() == capacity )
+			resize(capacity+(0.1*capacity));
+		if(!is_item())
+      current_index = used-1;
+		current_index++;
+    size_type i;
+		for(i = used; i > current_index; i--)
+			data[i] = data[i-1];
+		data[current_index] = entry;
+		used++;
+	}
 
-   void sequence::operator =(const sequence& source)
-   //library facility used: algorithm
-   {
-     value_type *new_data;
-     //check for possible self assignment:
-     if(this == &source)
-      return;
-     if(capacity != source.capacity)
-     {
-      new_data = new value_type[source.capacity];
-      delete[] data;
-      data = new_data;
-      capacity = source.capacity;
-     }
-     used = source.used;
-     copy(source.data, source.data + used, data);
-   }
+	void sequence::remove_current()
+	{
+		assert(is_item());
+    size_type i;
+		for(i = current_index; i < used-1; i++)
+			data[i] = data[i+1];
+		used--;
+	}
 
-   size_type sequence::size( ) const
-   {
-     return used;
-   }
-   bool sequence::is_item( ) const
-   {
-     if(current_index < used) return true;
-     else return false;
-   }
-   value_type sequence::current( ) const
-   {
-     assert(is_item());
-     return data[current_index];
-   }
+	void sequence::operator=(const sequence& source)
+	{
+		if(this == &source) return;
+		value_type *new_data = new value_type [source.capacity];
+		std::copy(source.data, source.data+source.used, new_data);
+		delete [] data;
+		data = new_data;
+		used = source.used;
+		capacity = source.capacity;
+		if(source.is_item())
+			current_index = source.current_index;
+		else
+			current_index = used;
+	}
 
+  sequence::size_type sequence::size() const
+  {
+    return used;
+  }
 
+  bool sequence::is_item() const
+  {
+    if(current_index < used) return true;
+    else return false;
+  }
 
+  sequence::value_type sequence::current() const
+  {
+    assert(is_item());
+    return data[current_index];
+  }
 
+	void sequence::operator +=(const sequence& source)
+	{
+		if(capacity < used + source.used)
+			resize(used + source.used);
+    size_type i;
+		for(i = used; i < used+source.used; i++)
+			data[i] = source.data[i];
+		used += source.used;
+	}
 
+	sequence::value_type sequence::operator[](size_type index) const
+	{
+		assert(index < used);
+		return data[index];
+	}
+
+	sequence operator +(const sequence& source1, const sequence& source2)
+	{
+		sequence total = source1;
+		total += source2;
+		return total;
+	}
 
 }
