@@ -81,7 +81,7 @@
 //     Postcondition: The item returned is the current item on the sequence.
 //
 // VALUE SEMANTICS for the sequence class:
-//   Assignments and the copy constructor may be used with sequence objects.
+//   Assignments, copy constructor addition and +=  may be used with sequence objects.
 //
 // DYNAMIC MEMORY USAGE by the sequence
 //   If there is insufficient dynamic memory, then the following functions
