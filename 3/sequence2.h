@@ -118,7 +118,6 @@ namespace main_savitch_4
         bool is_item( ) const;
         value_type current( ) const;
         //optional:
-        //sequence operator +(const sequence& s1, const sequence& s2);
         void operator +=(const sequence& source);
         value_type operator[](size_type index) const;
     private:
@@ -128,6 +127,8 @@ namespace main_savitch_4
         size_type current_index; //index of current item in the array
         size_type capacity; //current capacity of the sequence
     };
+    //optional:
+    //Non-member function
     sequence operator +(const sequence& source1, const sequence& source2);
 
 }
