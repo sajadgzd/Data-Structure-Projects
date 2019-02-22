@@ -14,7 +14,7 @@
 #include <algorithm>
 #include <cassert>
 #include "sequence2.h"
-
+//
 namespace main_savitch_4
 {
   const sequence::size_type sequence::DEFAULT_CAPACITY;
