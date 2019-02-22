@@ -38,6 +38,20 @@ namespace main_savitch_4
 				current_index = source.current_index;
 		}
 	}
+  void sequence::operator=(const sequence& source)
+  {
+    if(this == &source) return;
+    value_type *new_data = new value_type [source.capacity];
+    std::copy(source.data, source.data+source.used, new_data);
+    delete [] data;
+    data = new_data;
+    used = source.used;
+    capacity = source.capacity;
+    if(source.is_item())
+      current_index = source.current_index;
+    else
+      current_index = used;
+  }
 
 	sequence::~sequence()
 	{
@@ -104,20 +118,7 @@ namespace main_savitch_4
 		used--;
 	}
 
-	void sequence::operator=(const sequence& source)
-	{
-		if(this == &source) return;
-		value_type *new_data = new value_type [source.capacity];
-		std::copy(source.data, source.data+source.used, new_data);
-		delete [] data;
-		data = new_data;
-		used = source.used;
-		capacity = source.capacity;
-		if(source.is_item())
-			current_index = source.current_index;
-		else
-			current_index = used;
-	}
+
 
   sequence::size_type sequence::size() const
   {
