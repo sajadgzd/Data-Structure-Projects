@@ -52,6 +52,7 @@ namespace main_savitch_4
     else
       current_index = used;
   }
+  
 
 	sequence::~sequence()
 	{
