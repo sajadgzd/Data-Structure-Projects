@@ -1,4 +1,4 @@
-// PROVIDED BY: ________________ (your name and email address)
+// PROVIDED BY: Sajad Gholamzadehrizi ____ EMAIL: sajad1993gh@gmail.com
 // FILE: sequence3.h
 // CLASS PROVIDED: sequence (a container class for a sequence of items,
 // where each sequence may have a designated item called the current item)
@@ -26,13 +26,13 @@
 //
 //   void insert(const value_type& entry)
 //     Postcondition: A new copy of entry has been inserted in the sequence before
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been inserted at the front of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
 //   void attach(const value_type& entry)
 //     Postcondition: A new copy of entry has been inserted in the sequence after
-//     the current item. If there was no current item, then the new entry has 
+//     the current item. If there was no current item, then the new entry has
 //     been attached to the end of the sequence. In either case, the newly
 //     inserted item is now the current item of the sequence.
 //
@@ -100,4 +100,3 @@ namespace main_savitch_5
 }
 
 #endif
-
