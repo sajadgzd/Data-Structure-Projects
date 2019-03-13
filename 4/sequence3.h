@@ -96,6 +96,7 @@ namespace main_savitch_5
         -- Declare your private members here. I suggest that
         -- you have the five private member variables that are
         -- described in Section 5.4 (page 259) of the textbook.
+        
     };
 }
 
