@@ -93,10 +93,11 @@ namespace main_savitch_5
         bool is_item( ) const;
         value_type current( ) const;
     private:
-        -- Declare your private members here. I suggest that
-        -- you have the five private member variables that are
-        -- described in Section 5.4 (page 259) of the textbook.
-        
+        size_type many_nodes; //keeps track of the number of nodes
+        node* head_ptr;
+        node* tail_ptr;
+        node* cursor; //point to the current node
+        node* precursor;  //points to the node before current item
     };
 }
 
