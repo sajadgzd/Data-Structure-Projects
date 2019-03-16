@@ -24,3 +24,28 @@
 
 #include "sequence3.h"
 #include "node1.h"
+
+namespace main_savitch_5
+{
+    sequence::sequence()
+    {
+      many_nodes = 0;
+      head_ptr = NULL;
+      tail_ptr = NULL;
+      cursor = NULL;
+      precursor = NULL;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
