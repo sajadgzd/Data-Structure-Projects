@@ -12,13 +12,15 @@
 // FILE: sequence3.cxx
 // CLASS IMPLEMENTED: sequence (see sequence3.h for documentation)
 // INVARIANT for the sequence class:
-//   1. The number of items in the sequence is stored in the member variable used;
-//   2. If there is a current item, then it lies in data[current_index]; if there is
-//   no current item, then current_index equals used.
-//   3. The actual items of the sequence are stored in a partially filled dynamic array.
-//      The array is dynamic, pointed to by the member variable data.
-//      A larger dynamic array may be constructed if needed as the program runs.
-//    4. The total size of the dynamic array(current capacity) is in the member variable capacity.
-//    5.
-//    6.
-//
+//   1. The items in the sequence are stored on a linked list;
+//   2. The head pointer of the list is stored in the member variable head_ptr;
+//   3. The tail pointer of the list is stored in the member variable tail_ptr;
+//   4. The total number of items in the list is stored in the member variable
+//     many_nodes.
+//   5. The current node is pointed by a pointer which is a member variable named
+//      cursor
+//   6. The node before the current node is pointed by a pointer that us a member variable
+//      named precursor
+
+#include "sequence3.h"
+#include "node1.h"
