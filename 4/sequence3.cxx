@@ -106,26 +106,20 @@ namespace main_savitch_5
 
     sequence::size_t sequence::size( ) const
     {
-
+      return many_nodes;
     }
 
     bool sequence::is_item( ) const
     {
-
+      if(cursor != NULL) return true;
+      else return true;
     }
 
     sequence::value_type sequence::current( ) const
     {
-      
+      assert(is_item());
+      return cursor;
     }
-
-
-
-
-
-
-
-
 
 
 
