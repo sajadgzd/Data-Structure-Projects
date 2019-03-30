@@ -13,7 +13,7 @@ int main()
 	recursion.binary_print(cout, 27);
 
 	cout << "\nTriangle(cout, 3, 5):" << "\n";
-	recursion.triangle(cout, 3, 9);
+	recursion.triangle(cout, 3, 5);
 
 	cout << "\nindented_sentences(1, 4)" << "\n";
 	recursion.indented_sentences(1, 4);
