@@ -7,28 +7,18 @@ using namespace sajad_rec;
 
 int main()
 {
-	int number;
 	rec recursion;
-	double base, exponent;
 
-	cout << "Input a number to convert to binary:" << endl;
-	cin >> number;
-	cout << "Output in Binary:";
-	recursion.binary_print(cout, number);
+	cout << "binary_print(cout, 27):"<<"\t";
+	recursion.binary_print(cout, 27);
 
-	cout << "\n\nTriangle(cout, 3, 5) will print this to cout:" << endl;
+	cout << "\nTriangle(cout, 3, 5):" << "\n";
 	recursion.triangle(cout, 3, 9);
 
-	cout << "\n\nA recursive function to indent a sentence with starting point at 1 and max depth of 4" << endl;
+	cout << "\nindented_sentences(1, 4)" << "\n";
 	recursion.indented_sentences(1, 4);
 
-	cout << "\nPlease input a base for the power recursive function" << endl;
-	cin >> base;
-
-	cout << "\nPlease input an exponent for the power recursive function" << endl;
-	cin >> exponent;
-	cout << recursion.pow(base, exponent) << endl;
-
-	return 0;
+	cout << "\npow(3, 3):" << "\t";
+	cout << recursion.pow(3, 3) << "\n";
 
 }
