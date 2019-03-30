@@ -7,14 +7,14 @@ using namespace sajad_rec;
 
 int main()
 {
-	int inputNumber;
+	int number;
 	rec recursion;
 	double base, exponent;
 
 	cout << "Input a number to convert to binary:" << endl;
-	cin >> inputNumber;
+	cin >> number;
 	cout << "Output in Binary:";
-	recursion.binary_print(cout, inputNumber);
+	recursion.binary_print(cout, number);
 
 	cout << "\n\nTriangle(cout, 3, 5) will print this to cout:" << endl;
 	recursion.triangle(cout, 3, 9);
