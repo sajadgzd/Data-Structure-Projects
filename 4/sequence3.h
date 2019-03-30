@@ -96,7 +96,7 @@ namespace main_savitch_5
         size_type many_nodes; //keeps track of the number of nodes
         node* head_ptr;
         node* tail_ptr;
-        node* cursor; //point to the current node
+        node* cursor; //points to the current node
         node* precursor;  //points to the node before current item
     };
 }
