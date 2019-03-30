@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdlib>   
+#include <cstdlib>
 #include "rec_fun.h"
 
 using namespace std;
@@ -8,7 +8,7 @@ using namespace sajad_rec;
 int main()
 {
 	int inputNumber;
-	rec_fun recursion;
+	rec recursion;
 	double base, exponent;
 
 	cout << "Input a number to convert to binary:" << endl;
@@ -17,7 +17,7 @@ int main()
 	recursion.binary_print(cout, inputNumber);
 
 	cout << "\n\nTriangle(cout, 3, 5) will print this to cout:" << endl;
-	recursion.traingle(cout, 3, 9);
+	recursion.triangle(cout, 3, 9);
 
 	cout << "\n\nA recursive function to indent a sentence with starting point at 1 and max depth of 4" << endl;
 	recursion.indented_sentences(1, 4);

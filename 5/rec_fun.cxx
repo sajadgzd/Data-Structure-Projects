@@ -4,8 +4,8 @@
 #include <cassert>
 #include <cstdlib>  // Provides NULL, rand, size_t
 #include "rec_fun.h"
-
 using namespace std;
+
 namespace sajad_rec
 {
 
