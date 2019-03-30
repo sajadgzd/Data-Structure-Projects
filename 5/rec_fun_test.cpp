@@ -1,5 +1,5 @@
-#include <iostream>     // Provides cout and cin
-#include <cstdlib>      // Provides EXIT_SUCCESS
+#include <iostream>
+#include <cstdlib>   
 #include "rec_fun.h"
 
 using namespace std;
