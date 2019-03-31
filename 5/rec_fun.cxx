@@ -1,4 +1,3 @@
-// Sajad Gholamzadehrizi - sajad1993gh@gmail.com
 // rec_fun.cxx
 
 #include <iostream>
@@ -12,7 +11,8 @@ namespace sajad_rec
 
   void rec::binary_print(ostream& outs, unsigned int n)
   {
-    if (n == 0 || n == 1) cout << n;
+    if (n == 0 || n == 1)
+      outs << n;
     else {
       binary_print(outs, n/2);  // reduce n by order of 2
       binary_print(outs, n%2);  // print binary for that power of 2
@@ -23,14 +23,14 @@ namespace sajad_rec
   {
     assert(m <= n);
     if(m == n) {
-        for (int i = 0; i < m; i++) cout << "*";
-        cout << endl;
+        for (int i = 0; i < m; i++) outs << "*";
+        outs << "\n";
       } else {
-        for (int i = 0; i < m; i++) cout << "*";
-        cout << endl;
+        for (int i = 0; i < m; i++) outs << "*";
+        outs << "\n";
         triangle(outs, m + 1, n);
-        for (int i = 0; i < m; i++) cout << "*";
-        cout << endl;
+        for (int i = 0; i < m; i++) outs << "*";
+        outs << "\n";
       }
     }
 
@@ -49,10 +49,10 @@ namespace sajad_rec
       assert(m <= n+1);
       if (m <= n) {
         for(size_t i = m; i > 1; i--) cout << " ";
-        cout << "This was written by calling number " << m << endl;
+        cout << "This was written by calling number " << m << "\n";
         indented_sentences(m+1, n);
         for(size_t i = m; i > 1; i--) cout << " ";
-        cout << "This was ALSO written by calling number " << m << endl;
+        cout << "This was ALSO written by calling number " << m << "\n";
       }
     }
 
