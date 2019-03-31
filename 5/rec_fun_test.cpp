@@ -15,10 +15,10 @@ int main()
 	cout << "\nTriangle(cout, 3, 5):" << "\n";
 	recursion.triangle(cout, 3, 5);
 
-	cout << "\nindented_sentences(1, 4)" << "\n";
-	recursion.indented_sentences(1, 4);
+	cout << "\npow(5, 3):" << "\t";
+	cout << recursion.pow(5, 3) << "\n";
 
-	cout << "\npow(3, 3):" << "\t";
-	cout << recursion.pow(3, 3) << "\n";
+  cout << "\nindented_sentences(1, 4)" << "\n";
+  recursion.indented_sentences(1, 4);
 
 }
