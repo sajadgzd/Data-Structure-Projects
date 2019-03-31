@@ -28,34 +28,21 @@ namespace sajad_rec
   void rec::triangle(ostream& outs, unsigned int m, unsigned int n)
   {
     assert (m <= n);
-    if (m == n)
+    for (int i = 0; i < m; i++)
+        {
+          outs << "*";
+        }
+    outs << "\n";
+    if ( m < n)
     {
-        for (int i = 0; i < m; i++)
-        {
-          outs << "*";
-        }
-        outs << "\n";
-        for (int i = 0; i < m; i++)
-        {
-          outs << "*";
-        }
-        outs << "\n";
-      }
-    else
-    {
-        for (int i = 0; i < m; i++)
-        {
-          outs << "*";
-        }
-        outs << "\n";
-        triangle(outs, m + 1, n);
-        for (int i = 0; i < m; i++)
-        {
-          outs << "*";
-        }
-        outs << "\n";
-      }
+      triangle(outs, m + 1, n);
     }
+    for (int i = 0; i < m; i++)
+    {
+      outs << "*";
+    }
+    outs << "\n";
+  }
 
     double rec::pow(double x, int n)
     {
