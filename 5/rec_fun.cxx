@@ -11,12 +11,18 @@ namespace sajad_rec
 
   void rec::binary_print(ostream& outs, unsigned int n)
   {
-    if (n == 0 || n == 1)
-      outs << n;
-    else {
-      binary_print(outs, n/2);  // reduce n by order of 2
-      binary_print(outs, n%2);  // print binary for that power of 2
+    if (n > 1)
+    {
+      binary_print(outs , n/2);
     }
+    if (n == 0 || n%2 == 0)
+    {
+  		outs<< 0;
+  	}
+  	else
+    {
+  		outs << 1;
+  	}
   }
 
   void rec::triangle(ostream& outs, unsigned int m, unsigned int n)
@@ -25,7 +31,8 @@ namespace sajad_rec
     if(m == n) {
         for (int i = 0; i < m; i++) outs << "*";
         outs << "\n";
-      } else {
+      }
+    else {
         for (int i = 0; i < m; i++) outs << "*";
         outs << "\n";
         triangle(outs, m + 1, n);

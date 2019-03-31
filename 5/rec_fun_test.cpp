@@ -9,8 +9,8 @@ int main()
 {
 	rec recursion;
 
-	cout << "binary_print(cout, 3):"<<"\n";
-	recursion.binary_print(cout, 3);
+	cout << "binary_print(cout, 44):"<<"\n";
+	recursion.binary_print(cout, 44);
 
 	cout << "\nTriangle(cout, 3, 5):" << "\n";
 	recursion.triangle(cout, 3, 5);
