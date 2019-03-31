@@ -46,12 +46,18 @@ namespace sajad_rec
 
     double rec::pow(double x, int n)
     {
-      if (x == 0) assert(n > 0);
-      if (n == 0) return 1;
-      if (n == 1) return x;
-      else if(n < 0) return (1 / pow(x,-n));
-      else if(n > 0 && n % 2 == 0) return (pow(x, n/2) * pow(x, n/2));
-      else return (x*pow(x, n/2) * pow(x, n/2));
+      if (x == 0)
+        assert(n > 0);
+      if (n == 0)
+        return 1;
+      if (n == 1)
+        return x;
+      else if(n < 0)
+        return (1 / pow(x,-n));
+      else if(n > 0 && n % 2 == 0)
+        return (pow(x, n/2) * pow(x, n/2));
+      else
+        return (x*pow(x, n/2) * pow(x, n/2));
     }
 
     void rec::indented_sentences(size_t m, size_t n)
