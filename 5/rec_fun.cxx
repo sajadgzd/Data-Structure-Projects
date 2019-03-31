@@ -31,6 +31,8 @@ namespace sajad_rec
     if (m == n) {
         for (int i = 0; i < m; i++) outs << "*";
         outs << "\n";
+        for (int i = 0; i < m; i++) outs << "*";
+        outs << "\n";
       }
     else {
         for (int i = 0; i < m; i++) outs << "*";
