@@ -18,7 +18,7 @@ int main()
 	cout << "\npow(5, 3):" << "\t";
 	cout << recursion.pow(5, 3) << "\n";
 
-  cout << "\nindented_sentences(1, 4)" << "\n";
-  recursion.indented_sentences(1, 4);
+  cout << "\nindented_sentences(1, 6)" << "\n";
+  recursion.indented_sentences(1, 6);
 
 }
