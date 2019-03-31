@@ -15,7 +15,7 @@ namespace sajad_rec
     {
       binary_print(outs , n/2);
     }
-    if (n == 0 || n%2 == 0)
+    if (n%2 == 0)
     {
   		outs<< 0;
   	}
