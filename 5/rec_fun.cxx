@@ -17,7 +17,7 @@ namespace sajad_rec
     }
     if (n%2 == 0)
     {
-  		outs<< 0;
+  		outs << 0;
   	}
   	else
     {
@@ -27,8 +27,8 @@ namespace sajad_rec
 
   void rec::triangle(ostream& outs, unsigned int m, unsigned int n)
   {
-    assert(m <= n);
-    if(m == n) {
+    assert (m <= n);
+    if (m == n) {
         for (int i = 0; i < m; i++) outs << "*";
         outs << "\n";
       }
