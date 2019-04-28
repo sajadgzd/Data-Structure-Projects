@@ -48,6 +48,22 @@ namespace main_savitch_10
 	     ** made to this pointer in the recursive call will directly change
 	     ** the right pointer in the root_ptr's node.
 	     */
+
+     binary_tree_node<Item> *oldroot_ptr;
+     assert(root_ptr != NULL);
+
+     if (root_ptr->right( ) == NULL)
+     {
+         removed = root_ptr->data( ); //removed is set to the data field of the node because its passed by reference
+         oldroot_ptr = root_ptr; //keeps track of node to be deleted
+         root_ptr = root_ptr->left( ); //previous nodes right pointer gets set to current node left pointer
+         delete oldroot_ptr; //return pointer to the heap
+      }
+     else
+      {
+        bst_remove_max(root_ptr->right( ), removed);
+      }
+
 	}
 
     template <class Item>
