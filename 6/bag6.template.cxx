@@ -12,7 +12,10 @@
 // INVARIANT of the ADT:
 //   root_ptr is the root pointer of a binary search tree that contains the
 //   bag's items.
-
+// INVARIANT for the bag class:
+//  1. The items in the bag are stored in a binary search tree.
+//  2. The root pointer of the binary search tree is stored in the member variable root_ptr (which may be NULL for an empty tree)
+ 
 #include <cassert>
 #include <cstdlib>
 
