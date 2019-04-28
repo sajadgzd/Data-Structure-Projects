@@ -15,7 +15,7 @@
 // INVARIANT for the bag class:
 //  1. The items in the bag are stored in a binary search tree.
 //  2. The root pointer of the binary search tree is stored in the member variable root_ptr (which may be NULL for an empty tree)
- 
+
 #include <cassert>
 #include <cstdlib>
 
@@ -201,13 +201,34 @@ namespace main_savitch_10
     template <class Item>
 	typename bag<Item>::size_type bag<Item>::count(const Item& target) const
 	{
-	    size_type answer = 0;
-	    binary_tree_node<Item> *cursor;
+      size_type answer = 0;
+      binary_tree_node<Item> *cursor;
+      cursor = root_ptr;
 
-	    cursor = root_ptr;
-	    /* STUDENT WORK */
+      if (root_ptr == NULL) return 0;
 
-	    return answer;
+      else
+      {
+        while (cursor != NULL)
+        {
+          if (cursor->data() > target) // Greater than, left
+          {
+            cursor = cursor->left();
+          }
+
+          else if (cursor->data() < target) // Less than, right
+          {
+            cursor = cursor->right();
+          }
+
+          else if (cursor->data() == target) // Equal, increment total
+          {
+            ++answer;
+            cursor = cursor->left();
+            }
+          }
+        }
+        return answer;
 	}
 
     template <class Item>
