@@ -81,7 +81,7 @@ namespace main_savitch_10
         // CONSTANT functions
         size_type size( ) const;
         size_type count(const Item& target) const;
-	void debug( ) const { print(root_ptr, 0); }
+	      void debug( ) const { print(root_ptr, 0); }
     private:
         binary_tree_node<Item> *root_ptr; // Root pointer of binary search tree
         void insert_all(binary_tree_node<Item>* addroot_ptr);

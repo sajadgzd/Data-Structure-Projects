@@ -2,26 +2,19 @@
 // Sajad Gholamzadehrizi - sajad1993gh@gmail.com
 // FILE: bag6.template
 // -------------------------------------------------------------------------
-// This is a partial implementation of the bag template class from Section
-// 10.5 of "Data Structures and Other Objects Using C++". The parts marked
-// with ***STUDENT WORK*** are left as a project for data structures
-// students. Some additional discussion of this project is available at
-// http://www-cs.engr.ccny.cuny.edu/~zhu/CSc212/Assignments/assignment6.html
 // -------------------------------------------------------------------------
 // TEMPLATE CLASS IMPLEMENTED: bag<Item> (see bag6.h for documentation)
-// INVARIANT of the ADT:
-//   root_ptr is the root pointer of a binary search tree that contains the
-//   bag's items.
-// INVARIANT for the bag class:
+// INVARIANT of the ADT (bag):
 //  1. The items in the bag are stored in a binary search tree.
-//  2. The root pointer of the binary search tree is stored in the member variable root_ptr (which may be NULL for an empty tree)
+//  2. root_ptr is the root pointer of a binary search tree that contains the
+//   bag's items.
 
 #include <cassert>
 #include <cstdlib>
 
 namespace main_savitch_10
 {
-    template <class Item>
+  template <class Item>
 	void bst_remove_max(binary_tree_node<Item>*& root_ptr, Item& removed)
 	// Precondition: root_ptr is a root pointer of a non-empty binary
 	// search tree.
@@ -66,7 +59,7 @@ namespace main_savitch_10
 
 	}
 
-    template <class Item>
+  template <class Item>
 	bool bst_remove(binary_tree_node<Item>*& root_ptr, const Item& target)
 	// Precondition: root_ptr is a root pointer of a binary search tree
 	// or may be NULL for an empty tree).
@@ -80,34 +73,34 @@ namespace main_savitch_10
 
 	    if (root_ptr == NULL)
 	    {   // Empty tree
-		return false;
+		      return false;
 	    }
 
 	    if (target < root_ptr->data( ))
 	    {   // Continue looking in the left subtree
-		// Note: Any change made to root_ptr->left by this recursive
-		// call will change the actual left pointer (because the return
-		// value from the left() member function is a reference to the
-		// actual left pointer.
-		return bst_remove(root_ptr->left( ), target);
+		      // Note: Any change made to root_ptr->left by this recursive
+		      // call will change the actual left pointer (because the return
+	        // value from the left() member function is a reference to the
+	        // actual left pointer.
+		      return bst_remove(root_ptr->left( ), target);
 	    }
 
 	    if (target > root_ptr->data( ))
 	    {   // Continue looking in the right subtree
-		// Note: Any change made to root_ptr->right by this recursive
-		// call will change the actual right pointer (because the return
-		// value from the right() member function is a reference to the
-		// actual right pointer.
-		return bst_remove(root_ptr->right( ), target);
+		      // Note: Any change made to root_ptr->right by this recursive
+		      // call will change the actual right pointer (because the return
+		      // value from the right() member function is a reference to the
+      	  // actual right pointer.
+		      return bst_remove(root_ptr->right( ), target);
 	    }
 
 	    if (root_ptr->left( ) == NULL)
 	    {   // Target was found and there is no left subtree, so we can
-		// remove this node, making the right child be the new root.
-		oldroot_ptr = root_ptr;
-		root_ptr = root_ptr->right( );
-		delete oldroot_ptr;
-		return true;
+	        // remove this node, making the right child be the new root.
+		      oldroot_ptr = root_ptr;
+	        root_ptr = root_ptr->right( );
+	        delete oldroot_ptr;
+          return true;
 	    }
 
 	    // If code reaches this point, then we must remove the target from
@@ -121,7 +114,7 @@ namespace main_savitch_10
 	    return true;
 	}
 
-    template <class Item>
+  template <class Item>
 	typename bag<Item>::size_type bst_remove_all
 	(binary_tree_node<Item>*& root_ptr, const Item& target)
 	// Precondition: root_ptr is a root pointer of a binary search tree
@@ -142,25 +135,28 @@ namespace main_savitch_10
 	    if (root_ptr == NULL)
 	    {   // Empty tree
 	        /* STUDENT WORK */
+          return 0;
 	    }
 
 	    if (target < root_ptr->data( ))
 	    {   // Continue looking in the left subtree
 	        /* STUDENT WORK */
+          return bst_remove(root_ptr->left( ), target);
 	    }
 
 	    if (target > root_ptr->data( ))
 	    {   // Continue looking in the right subtree
 	        /* STUDENT WORK */
+          return bst_remove(root_ptr->right( ), target);
 	    }
 
 	    if (root_ptr->left( ) == NULL)
 	    {   // Target was found and there is no left subtree, so we can
-		// remove this node, making the right child be the new root.
-		oldroot_ptr = root_ptr;
-		root_ptr = root_ptr->right( );
-		delete oldroot_ptr;
-		return 1;
+		      // remove this node, making the right child be the new root.
+		      oldroot_ptr = root_ptr;
+	        root_ptr = root_ptr->right( );
+          delete oldroot_ptr;
+          return 1;
 	    }
 
 	    // If code reaches this point, then we must remove the target from
@@ -171,42 +167,41 @@ namespace main_savitch_10
 	    // the maximum element that we moved up from our left subtree
 	    // might also be a copy of the target).
 	    /* STUDENT WORK */
+      bst_remove_max(root_ptr->left( ), root_ptr->data( ));
+      return 1 + bst_remove_all(root_ptr, target);
 
 	}
 
-    template <class Item>
+  template <class Item>
 	bag<Item>::bag(const bag<Item>& source)
 	// Library facilities used: bintree.h
 	{
 	    root_ptr = tree_copy(source.root_ptr);
 	}
 
-    template <class Item>
+  template <class Item>
 	bag<Item>::~bag( )
 	// Header file used: bintree.h
 	{
 	    tree_clear(root_ptr);
 	}
 
-    template <class Item>
+  template <class Item>
 	typename bag<Item>::size_type bag<Item>::size( ) const
 	// Header file used: bintree.h
 	{
 	    return tree_size(root_ptr);
 	}
 
-    template <class Item>
+  template <class Item>
 	void bag<Item>::insert(const Item& entry)
 	// Header file used: bintree.h
 	{
-    ///
-    //create temp pointer to the root_ptr
-    binary_tree_node<Item> *cursor = root_ptr;
+    binary_tree_node<Item> *cursor;
+    cursor = root_ptr;
     bool done = false;
-    ///
-	    //binary_tree_node<Item> *cursor;
 
-	    if (root_ptr == NULL)
+	  if (root_ptr == NULL)
 	    {   // Add the first node of the binary search tree:
 		root_ptr = new binary_tree_node<Item>(entry);
 		return;
