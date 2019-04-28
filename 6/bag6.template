@@ -188,7 +188,7 @@ namespace main_savitch_10
     binary_tree_node<Item> *cursor = root_ptr;
     bool done = false;
     ///
-	    binary_tree_node<Item> *cursor;
+	    //binary_tree_node<Item> *cursor;
 
 	    if (root_ptr == NULL)
 	    {   // Add the first node of the binary search tree:
