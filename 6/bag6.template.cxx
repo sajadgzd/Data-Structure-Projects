@@ -1,5 +1,5 @@
 
-// Sajad Gholamzadehrizi
+// Sajad Gholamzadehrizi - sajad1993gh@gmail.com
 // FILE: bag6.template
 // -------------------------------------------------------------------------
 // This is a partial implementation of the bag template class from Section

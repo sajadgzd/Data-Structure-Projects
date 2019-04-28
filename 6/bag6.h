@@ -1,4 +1,4 @@
-// Sajad Gholamzadehrizi
+// Sajad Gholamzadehrizi - sajad1993gh@gmail.com
 // FILE: bag6.h (part of the namespace main_savitch_10)
 // TEMPLATE CLASS PROVIDED: bag<Item>
 //     (a container template class for a collection of items)
