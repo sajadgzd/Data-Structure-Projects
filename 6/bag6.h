@@ -66,7 +66,7 @@ namespace main_savitch_10
     {
     public:
         // TYPEDEFS
-	typedef std::size_t size_type;
+	      typedef std::size_t size_type;
         typedef Item value_type;
         // CONSTRUCTORS and DESTRUCTOR
         bag( ) { root_ptr = NULL; }
